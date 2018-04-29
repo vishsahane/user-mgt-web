@@ -1,0 +1,36 @@
+<h4 class="form-group">User List</h4>
+<div class="row form-group">
+    <div class="col-sm-3">
+        <button mat-raised-button [routerLink]="['/user-details', 'new']">Add User</button>
+    </div>
+</div>
+<div class="table-responsive ">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Contact No</th>
+                <th>Date of Birth</th>
+                <th>Action</th>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.contact_number}}</td>
+                <td>{{user.dob | date: 'dd/MM/yyyy' }}</td>
+                <td>
+                    <i [routerLink]="['/user-details',user.id]" class="material-icons">mode_edit</i>
+                    <i class="material-icons" (click)="confirmDelete(user.id)">delete</i>
+                </td>
+            </tr>
+                
+        </tbody>
+    </table>
+    </div>
