@@ -5,6 +5,7 @@ import { User } from '../classes/user';
 @Injectable()
 export class UserService {
   private apiUrl = 'https://user-mgt-api.herokuapp.com';
+  // private apiUrl = 'http://localhost:5000';
 
   constructor(private http: HttpClient) { }
 

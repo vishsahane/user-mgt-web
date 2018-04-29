@@ -1,7 +1,7 @@
 <h4 class="form-group">User Details</h4>
 
 <form name="userForm" (submit)="saveUser(userForm)"  #userForm="ngForm">
-    <div class="row">
+    <div class="row form-group">
         <div class="col-sm-3">
             <mat-form-field>
                 <input type="text" matInput placeholder="First Name" name="firstName" [(ngModel)]="selectedUser.first_name" required #first_name="ngModel" maxlength="20">
@@ -16,14 +16,14 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row form-group">
         <div class="col-sm-3">
             <mat-form-field>
-                <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="selectedUser.email" required #email="ngModel" maxlength="20">
+                <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="selectedUser.email" required #email="ngModel" maxlength="40">
                 <mat-error *ngIf="email.invalid">Email is required</mat-error>
             </mat-form-field>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 ">
             <mat-form-field>
                 <input type="text" matInput placeholder="Contact Number" name="contactNumber" [(ngModel)]="selectedUser.contact_number" required #contact_number="ngModel" maxlength="20">
                 <mat-error *ngIf="contact_number.invalid">Contact Number is required</mat-error>
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row form-group">
         <div class="col-sm-3">
             <mat-form-field class="example-full-width">
                 <input type="text" matInput [max]="maxDate" [matDatepicker]="picker" placeholder="Date of Birth"  name="dob" [(ngModel)]="selectedUser.dob" required #dob="ngModel" >
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row form-group">
         <div class="col-sm-3">
             <button mat-raised-button color="primary" type="submit" >Save</button>
         </div>

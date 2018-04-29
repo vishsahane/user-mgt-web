@@ -1,7 +1,7 @@
 <h4 class="form-group">User List</h4>
 <div class="row form-group">
     <div class="col-sm-3">
-        <button mat-raised-button [routerLink]="['/user-details', 'new']">Add User</button>
+        <button mat-raised-button [routerLink]="['/user-details', 'new']" title="Add new user" >Add User</button>
     </div>
 </div>
 <div class="table-responsive ">
@@ -24,10 +24,10 @@
                 <td>{{user.last_name}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.contact_number}}</td>
-                <td>{{user.dob | date: 'dd/MM/yyyy' }}</td>
+                <td>{{user.dob | date: 'M/d/yyyy' }}</td>
                 <td>
-                    <i [routerLink]="['/user-details',user.id]" class="material-icons">mode_edit</i>
-                    <i class="material-icons" (click)="confirmDelete(user.id)">delete</i>
+                    <i [routerLink]="['/user-details',user.id]" class="material-icons" title="Edit" >mode_edit</i>
+                    <i class="material-icons" (click)="confirmDelete(user.id)" title="Delete">delete</i>
                 </td>
             </tr>
                 
